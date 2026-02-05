@@ -15,6 +15,7 @@ st.markdown(
 
     .stTextInput > div > div > input {
         background-color: #fff0f5;
+        color: black;
         border-radius: 10px;
         border: 1px solid #ff69b4;
         padding: 10px;
