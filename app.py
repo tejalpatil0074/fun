@@ -6,14 +6,22 @@ if "page" not in st.session_state:
 
 # ---------- PAGE 1 ----------
 if st.session_state.page == 1:
-    st.title("💭 Quick Questions")
+    st.title("Hello My Love!!")
 
-    st.write("Do you believe in love?")
-    st.write("❤️ ❤️ ❤️")
+    q1 = st.text_input("1️⃣ What comes to your mind when you hear the word *love*?")
+    q2 = st.text_input("2️⃣ Do you believe small moments matter more than big ones?")
+    q3 = st.text_input("3️⃣ One word that makes you smile? 😊")
 
     if st.button("Next ➡️"):
-        st.session_state.page = 2
-        st.rerun()
+        if not q1 or not q2 or not q3:
+            st.warning("Please answer all questions ✨")
+        else:
+            st.session_state.answers["q1"] = q1
+            st.session_state.answers["q2"] = q2
+            st.session_state.answers["q3"] = q3
+
+            st.session_state.page = 2
+            st.rerun()
 
 # ---------- PAGE 2 ----------
 elif st.session_state.page == 2:
