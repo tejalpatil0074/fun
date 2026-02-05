@@ -9,7 +9,7 @@ st.markdown(
     }
 
     h1, h2, h3, p, label {
-        color: #7a003c;
+        color: #C11C84;
         font-family: 'Georgia', serif;
     }
 
@@ -21,7 +21,7 @@ st.markdown(
     }
 
     .stButton > button {
-        background-color: #ff4d88;
+        background-color: #000000;
         color: white;
         border-radius: 20px;
         padding: 10px 25px;
