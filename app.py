@@ -56,7 +56,7 @@ if st.session_state.page == 1:
     q3 = st.text_input("What is your expectations from your partner!")
 
     def has_enough_words(text, min_words=5):
-    return len(text.strip().split()) >= min_words
+        return len(text.strip().split()) >= min_words
 
 
     if st.button("Next ➡️"):
