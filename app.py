@@ -63,15 +63,15 @@ if st.session_state.page == 1:
         if not q1 or not q2 or not q3:
             st.warning("Please answer all questions ✨")
 
-         elif (
-             not has_enough_words(q1)
-             or not has_enough_words(q2)
-             or not has_enough_words(q3)
-         ):
-             st.toast(
-                 "No one or two word answers allowed 💔\nWrite with big love and big feelings 💖",
-                 icon="💌"
-             )
+        elif (
+            not has_enough_words(q1)
+            or not has_enough_words(q2)
+            or not has_enough_words(q3)
+        ):
+            st.toast(
+                "No one or two word answers allowed 💔\nWrite with big love and big feelings 💖",
+                icon="💌"
+            )
         else:
             st.session_state.answers["q1"] = q1
             st.session_state.answers["q2"] = q2
