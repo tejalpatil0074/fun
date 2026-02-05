@@ -1,16 +1,57 @@
 import streamlit as st
 
+# ---------- CSS ----------
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
+    }
+
+    h1, h2, h3, p, label {
+        color: #7a003c;
+        font-family: 'Georgia', serif;
+    }
+
+    .stTextInput > div > div > input {
+        background-color: #fff0f5;
+        border-radius: 10px;
+        border: 1px solid #ff69b4;
+        padding: 10px;
+    }
+
+    .stButton > button {
+        background-color: #ff4d88;
+        color: white;
+        border-radius: 20px;
+        padding: 10px 25px;
+        border: none;
+        font-size: 16px;
+    }
+
+    .stButton > button:hover {
+        background-color: #ff1a66;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Initialize page state
 if "page" not in st.session_state:
     st.session_state.page = 1
+
+if "answers" not in st.session_state:
+    st.session_state.answers = {}
+
 
 # ---------- PAGE 1 ----------
 if st.session_state.page == 1:
     st.title("Hello My Love!!")
 
-    q1 = st.text_input("1️⃣ What comes to your mind when you hear the word *love*?")
-    q2 = st.text_input("2️⃣ Do you believe small moments matter more than big ones?")
-    q3 = st.text_input("3️⃣ One word that makes you smile? 😊")
+    q1 = st.text_input("What comes to your mind when you hear the word *love*?")
+    q2 = st.text_input("Tell me one thing about your girlfriend that she does for you and you likes it the most")
+    q3 = st.text_input("What is your expectations from your partner!")
 
     if st.button("Next ➡️"):
         if not q1 or not q2 or not q3:
