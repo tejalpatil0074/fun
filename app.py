@@ -52,12 +52,13 @@ st.markdown(
         font-family: 'Georgia', serif;
     }
 
-    .stTextInput > div > div > input {
-        background-color: #fff0f5;
-        color: black;
-        border-radius: 10px;
-        border: 1px solid #ff69b4;
-        padding: 10px;
+    .stTextArea textarea {
+        background-color: #fff0f5 !important;
+        color: black !important;
+        border-radius: 10px !important;
+        border: 1px solid #ff69b4 !important;
+        padding: 10px !important;
+        font-family: Georgia, serif !important;
     }
 
     .stButton > button {
