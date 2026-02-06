@@ -203,9 +203,9 @@ elif st.session_state.page == 3:
     # Gallery Columns
     c1, c2, c3 = st.columns(3)
     
-    img_url_1 = "https://raw.githubusercontent.com/tejalpatil0074/fun/image1/pic1.jpeg" 
-    img_url_2 = "https://raw.githubusercontent.com/tejalpatil0074/fun/image1/pic2.jpeg"
-    img_url_3 = "https://raw.githubusercontent.com/tejalpatil0074/fun/image1/pic3.jpeg"
+    img_url_1 = "file:///C:/Users/511WS/Downloads/pic2%20(1).jpeg" 
+    img_url_2 = "file:///C:/Users/511WS/Downloads/pic2%20(1).jpeg"
+    img_url_3 = "file:///C:/Users/511WS/Downloads/pic2%20(1).jpeg"
 
     with c1:
         st.markdown(f"""
