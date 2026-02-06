@@ -203,11 +203,9 @@ elif st.session_state.page == 3:
     # Gallery Columns
     c1, c2, c3 = st.columns(3)
     
-    # REPLACE THESE URLs with your GitHub Raw Image URLs
-    # Format: https://raw.githubusercontent.com/{username}/{repo_name}/{branch_name}/{path_to_image}
-    img_url_1 = "https://raw.githubusercontent.com/tejalpatil0074/fun/images1/.jpg" 
-    img_url_2 = "https://raw.githubusercontent.com/tejalpatil0074/fun/images1/love.jpg"
-    img_url_3 = "https://raw.githubusercontent.com/tejalpatil0074/fun/images1/forever.jpg"
+    img_url_1 = "https://raw.githubusercontent.com/tejalpatil0074/fun/image1/2026-02-06 16-19-30.pdf" 
+    img_url_2 = "https://raw.githubusercontent.com/tejalpatil0074/fun/image1/2026-02-06 16-20-51.pdf"
+    img_url_3 = "https://raw.githubusercontent.com/tejalpatil0074/fun/image1/2026-02-06 16-21-44.pdf"
 
     with c1:
         st.markdown(f"""
@@ -242,6 +240,7 @@ elif st.session_state.page == 3:
         st.rerun()
 
 # --- PAGE 4: PROPOSAL ---
+
 elif st.session_state.page == 4:
     st.markdown("<br><br>", unsafe_allow_html=True)
     st.markdown("<h1>Will you be my Valentine? 🌹</h1>", unsafe_allow_html=True)
