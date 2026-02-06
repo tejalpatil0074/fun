@@ -182,24 +182,23 @@ elif st.session_state.page == 2:
     st.markdown("</div>", unsafe_allow_html=True)
 
 if st.session_state.show_valentine_modal:
-    # Modal HTML
     st.markdown(
         f"""
         <div class="modal-overlay">
             <div class="modal-box">
                 <h2>💌</h2>
                 <p>{st.session_state.valentine_response}</p>
+
+                <form method="post">
+                    <button class="modal-btn">Close 💖</button>
+                </form>
             </div>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    # Close button ABOVE overlay
-    close_container = st.container()
-    with close_container:
-        st.markdown('<div class="modal-close-btn">', unsafe_allow_html=True)
-        if st.button("Close 💖"):
-            st.session_state.show_valentine_modal = False
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+    if st.button("Close 💖", key="close_modal_btn_hidden"):
+        st.session_state.show_valentine_modal = False
+        st.rerun()
+
