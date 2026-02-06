@@ -62,15 +62,22 @@ st.markdown("""
         color: white;
     }
 
-    /* Input Fields */
+    /* Input Fields - White Background & Black Text */
     .stTextInput input, .stTextArea textarea {
+        background-color: #ffffff !important;
         border: 2px solid #ffccd5;
         border-radius: 10px;
-        color: #5c2c2c;
+        color: #000000 !important;
     }
     .stTextInput input:focus, .stTextArea textarea:focus {
         border-color: #ff4d6d;
         box-shadow: 0 0 5px rgba(255, 77, 109, 0.5);
+        color: #000000 !important;
+    }
+    /* Ensure placeholder text is visible on white background */
+    ::placeholder {
+        color: #888888 !important;
+        opacity: 1;
     }
 
     /* Photo Frames for Gallery */
