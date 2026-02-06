@@ -189,13 +189,13 @@ elif st.session_state.page == 2:
         
         if submitted:
             if q1 and q2 and q3 and q4:
-                st.session_state.page = 4
+                st.session_state.page = 3
                 st.rerun()
             else:
                 st.error("Hey! You have to answer all the questions! No skipping! 😠")
 
 # --- PAGE 3: GALLERY ---
-elif st.session_state.page == 4:
+elif st.session_state.page == 3:
     st.markdown("<h1>Us & Memories ✨</h1>", unsafe_allow_html=True)
     st.markdown("<p>Every moment with you is my favorite❤️.</p>", unsafe_allow_html=True)
     
@@ -237,7 +237,7 @@ elif st.session_state.page == 4:
     st.markdown("<br>", unsafe_allow_html=True)
     
     if st.button("Next ➡️"):
-        st.session_state.page = 4
+        st.session_state.page = 3
         st.rerun()
 
 # --- PAGE 4: PROPOSAL ---
