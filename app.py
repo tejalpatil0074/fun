@@ -104,8 +104,8 @@ if st.session_state.page == 1:
 
 
     q1 = st.text_area("What comes to your mind when you hear the word *love*?", height=100)
-    q2 = st.text_input("Tell me one thing about your girlfriend that she does for you and you likes it the most")
-    q3 = st.text_input("What is your expectations from your partner!")
+    q2 = st.text_area("Tell me one thing about your girlfriend that she does for you and you likes it the most")
+    q3 = st.text_area("What is your expectations from your partner!")
 
     def has_enough_words(text, min_words=5):
         return len(text.strip().split()) >= min_words
