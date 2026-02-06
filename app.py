@@ -78,11 +78,18 @@ st.markdown(
 )
 
 # Initialize page state
+# ---------- SESSION STATE INITIALIZATION ----------
 if "page" not in st.session_state:
     st.session_state.page = 1
 
 if "answers" not in st.session_state:
     st.session_state.answers = {}
+
+if "show_valentine_modal" not in st.session_state:
+    st.session_state.show_valentine_modal = False
+
+if "valentine_response" not in st.session_state:
+    st.session_state.valentine_response = ""
 
 
 # ---------- PAGE 1 ----------
