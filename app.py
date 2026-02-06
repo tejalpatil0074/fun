@@ -105,6 +105,14 @@ st.markdown("""
         font-size: 1.2rem;
     }
 
+    /* Custom Styling for the Dialog/Modal Popup */
+    div[data-testid="stDialog"] div[role="dialog"] {
+        background-color: #ffffff;
+        border-radius: 20px;
+        border: 3px solid #ffccd5;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
     /* Floating Hearts Animation */
     @keyframes floatUp {
         0% { transform: translateY(100vh) rotate(0deg); opacity: 0.8; }
@@ -128,6 +136,17 @@ st.markdown("""
     <div class="heart-bg" style="left: 75%; animation-duration: 14s; font-size: 32px;">❤</div>
     <div class="heart-bg" style="left: 90%; animation-duration: 9s; font-size: 28px;">❤</div>
     """, unsafe_allow_html=True)
+
+# --- HELPER FUNCTIONS ---
+@st.dialog("Excuse me?", width="small")
+def show_no_modal():
+    st.markdown("""
+        <div style='text-align: center; color: #5c2c2c; font-size: 1.2em; font-family: "Quicksand", sans-serif; margin-bottom: 20px;'>
+            You can't say no! Try hitting the other button. 😤🔪
+        </div>
+        """, unsafe_allow_html=True)
+    if st.button("Okay...", key="modal_ok"):
+        st.rerun()
 
 # --- SESSION STATE MANAGEMENT ---
 if 'page' not in st.session_state:
@@ -234,7 +253,7 @@ elif st.session_state.page == 4:
             
     with col2:
         if st.button("No 🙄"):
-            st.error("Excuse me? You can't say no! Try hitting the other button. 😤🔪")
+            show_no_modal()
 
 # --- PAGE 5: SUCCESS ---
 elif st.session_state.page == 5:
