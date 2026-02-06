@@ -175,11 +175,12 @@ if st.session_state.page == 1:
 
 # --- PAGE 2: QUIZ ---
 elif st.session_state.page == 2:
-    st.markdown("<h1>I LOVE YOU 📝</h1>", unsafe_allow_html=True)
+    st.markdown("<h1>Pop Quiz! 📝</h1>", unsafe_allow_html=True)
+    st.markdown("<p>Let's see how well you know us...</p>", unsafe_allow_html=True)
     
     with st.form("quiz_form"):
         q1 = st.text_input("1. Where did we first meet?")
-        q2 = st.text_input("2. What is your favorite thing to me?")
+        q2 = st.text_input("2. What is my favorite thing to eat?")
         q3 = st.text_area("3. Why do you love me? (Be cute!)")
         
         st.markdown("<br>", unsafe_allow_html=True)
@@ -202,27 +203,32 @@ elif st.session_state.page == 3:
     # Gallery Columns
     c1, c2, c3 = st.columns(3)
     
-    # You can replace the src links below with actual image URLs or local paths
+    # REPLACE THESE URLs with your GitHub Raw Image URLs
+    # Format: https://raw.githubusercontent.com/{username}/{repo_name}/{branch_name}/{path_to_image}
+    img_url_1 = "https://raw.githubusercontent.com/tejalpatil0074/fun/images1/.jpg" 
+    img_url_2 = "https://raw.githubusercontent.com/tejalpatil0074/fun/images1/love.jpg"
+    img_url_3 = "https://raw.githubusercontent.com/tejalpatil0074/fun/images1/forever.jpg"
+
     with c1:
-        st.markdown("""
+        st.markdown(f"""
         <div class="photo-frame">
-            <img src="C:\Users\511WS\Downloads\2026-02-06 16-21-44.pdf" width="100%" style="border-radius: 5px;">
+            <img src="{img_url_1}" width="100%" style="border-radius: 5px;">
             <div class="caption">Cutie</div>
         </div>
         """, unsafe_allow_html=True)
         
     with c2:
-        st.markdown("""
+        st.markdown(f"""
         <div class="photo-frame">
-            <img src="C:\Users\511WS\Downloads\2026-02-06 16-20-51.pdf" width="100%" style="border-radius: 5px;">
+            <img src="{img_url_2}" width="100%" style="border-radius: 5px;">
             <div class="caption">Love</div>
         </div>
         """, unsafe_allow_html=True)
         
     with c3:
-        st.markdown("""
+        st.markdown(f"""
         <div class="photo-frame">
-            <img src="C:\Users\511WS\Downloads\2026-02-06 16-19-30.pdf" width="100%" style="border-radius: 5px;">
+            <img src="{img_url_3}" width="100%" style="border-radius: 5px;">
             <div class="caption">Forever</div>
         </div>
         """, unsafe_allow_html=True)
@@ -261,9 +267,11 @@ elif st.session_state.page == 5:
     # Centered Image
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
+        # Example GIF URL - you can replace this with a GitHub raw URL too if you have a custom GIF
         st.image("https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif", use_container_width=True)
     
-    st.markdown("""
+    # Using a raw string (r"...") to prevent unicode escape errors
+    st.markdown(r"""
     <div style="text-align: center; margin-top: 20px;">
         <p style="font-size: 1.5em; color: #ff4d6d; font-weight: bold;">
             Thank you, I love you! <br>
