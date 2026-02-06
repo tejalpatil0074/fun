@@ -177,9 +177,14 @@ if st.session_state.show_valentine_modal:
             <div class="modal-box">
                 <h2>💌</h2>
                 <p>{st.session_state.valentine_response}</p>
-                <button onclick="window.location.reload()">Close 💖</button>
             </div>
         </div>
         """,
         unsafe_allow_html=True
     )
+
+    # REAL Streamlit button (this works)
+    if st.button("Close 💖"):
+        st.session_state.show_valentine_modal = False
+        st.rerun()
+
