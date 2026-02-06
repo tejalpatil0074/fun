@@ -4,6 +4,45 @@ import streamlit as st
 st.markdown(
     """
     <style>
+
+    .blur {
+        filter: blur(6px);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .modal-box {
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        width: 55%;
+        text-align: center;
+        font-family: Georgia, serif;
+        color: #C11C84;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .modal-box button {
+        margin-top: 20px;
+        padding: 10px 30px;
+        border-radius: 20px;
+        border: none;
+        background: #ff4d88;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
     .stApp {
         background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
     }
@@ -82,6 +121,10 @@ if st.session_state.page == 1:
 
 # ---------- PAGE 2 ----------
 elif st.session_state.page == 2:
+    content_class = "blur" if st.session_state.show_valentine_modal else ""
+
+    st.markdown(f"<div class='{content_class}'>", unsafe_allow_html=True)
+
     st.title("💖 A Little Something")
 
     st.write(
@@ -96,8 +139,34 @@ elif st.session_state.page == 2:
 
     with col1:
         if st.button("Yes 💕"):
-            st.success("Yayyy! You just made my heart so happy 💖🥰")
+            st.session_state.valentine_response = (
+                "Yayyy 💖🥰<br><br>"
+                "You just made my heart the happiest ever!"
+            )
+            st.session_state.show_valentine_modal = True
+            st.rerun()
 
     with col2:
         if st.button("No 😢"):
-            st.warning("Oh no 😭 Think again… love is knocking on your door 💔")
+            st.session_state.valentine_response = (
+                "Oh no 💔😭<br><br>"
+                "Think again… love is knocking on your door 💌"
+            )
+            st.session_state.show_valentine_modal = True
+            st.rerun()
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+if st.session_state.show_valentine_modal:
+    st.markdown(
+        f"""
+        <div class="modal-overlay">
+            <div class="modal-box">
+                <h2>💌</h2>
+                <p>{st.session_state.valentine_response}</p>
+                <button onclick="window.location.reload()">Close 💖</button>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
