@@ -54,7 +54,7 @@ st.markdown(
 
     .stTextArea textarea {
         background-color: #fff0f5 !important;
-        color: white;
+        color: black;
         border-radius: 10px !important;
         border: 1px solid #ff69b4 !important;
         padding: 10px !important;
@@ -63,7 +63,7 @@ st.markdown(
 
     .stTextArea textarea:focus {
         background-color: #fff0f5 !important;
-        color: white;
+        color: black;
     }
 
     .stButton > button {
