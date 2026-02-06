@@ -242,7 +242,7 @@ elif st.session_state.page == 3:
 
 # --- PAGE 4: PROPOSAL ---
 
-elif st.session_state.page == 4:
+elif st.session_state.page == 3:
     st.markdown("<br><br>", unsafe_allow_html=True)
     st.markdown("<h1>Will you be my Valentine? 🌹</h1>", unsafe_allow_html=True)
     st.markdown("<div style='font-size: 3em; text-align: center;'>🥺👉👈</div>", unsafe_allow_html=True)
