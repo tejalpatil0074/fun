@@ -176,27 +176,28 @@ if st.session_state.page == 1:
 # --- PAGE 2: QUIZ ---
 elif st.session_state.page == 2:
     st.markdown("<h1>Pop Quiz! 📝</h1>", unsafe_allow_html=True)
-    st.markdown("<p>Let's see how well you know us...</p>", unsafe_allow_html=True)
+    st.markdown("<p>I Love You!❤️</p>", unsafe_allow_html=True)
     
     with st.form("quiz_form"):
-        q1 = st.text_input("1. Where did we first meet?")
-        q2 = st.text_input("2. What is my favorite thing to eat?")
-        q3 = st.text_area("3. Why do you love me? (Be cute!)")
+        q1 = st.text_input("1. What do you like the most about me?")
+        q2 = st.text_input("2. What annoys you the most about me?")
+        q3 = st.text_area("3. Why do you love your teju❤️? (Be cute!)")
+        q4 = st.text_input("4. Would you promise me that you'll always always love me!?")
         
         st.markdown("<br>", unsafe_allow_html=True)
         submitted = st.form_submit_button("Submit Answers")
         
         if submitted:
-            if q1 and q2 and q3:
-                st.session_state.page = 3
+            if q1 and q2 and q3 and q4:
+                st.session_state.page = 4
                 st.rerun()
             else:
                 st.error("Hey! You have to answer all the questions! No skipping! 😠")
 
 # --- PAGE 3: GALLERY ---
-elif st.session_state.page == 3:
+elif st.session_state.page == 4:
     st.markdown("<h1>Us & Memories ✨</h1>", unsafe_allow_html=True)
-    st.markdown("<p>Every moment with you is my favorite.</p>", unsafe_allow_html=True)
+    st.markdown("<p>Every moment with you is my favorite❤️.</p>", unsafe_allow_html=True)
     
     st.markdown("<br>", unsafe_allow_html=True)
     
@@ -244,7 +245,7 @@ elif st.session_state.page == 3:
 elif st.session_state.page == 4:
     st.markdown("<br><br>", unsafe_allow_html=True)
     st.markdown("<h1>Will you be my Valentine? 🌹</h1>", unsafe_allow_html=True)
-    st.markdown("<div style='font-size: 5em; text-align: center;'>🥺👉👈</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size: 3em; text-align: center;'>🥺👉👈</div>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
     
     col1, col2 = st.columns([1, 1])
