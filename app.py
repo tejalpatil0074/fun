@@ -61,6 +61,11 @@ st.markdown(
         font-family: Georgia, serif !important;
     }
 
+    .stTextArea textarea:focus {
+        background-color: #fff0f5 !important;
+        color: black !important;
+    }
+
     .stButton > button {
         background-color: #000000;
         color: white;
