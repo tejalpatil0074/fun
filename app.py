@@ -166,7 +166,7 @@ if st.session_state.page == 1:
         if submitted:
             name = name_input.strip().lower()
             if name == "tejal":
-                st.error("Wait a minute! No, that's not correct! 😤 Please write what you love to call her. It should be either 'Baby' or 'Teju'.")
+                st.error("Wait a minute! No, that's not correct! 😤 Please write what you love to call her.")
             elif name in ["baby", "teju"]:
                 st.session_state.page = 2
                 st.rerun()
@@ -175,12 +175,11 @@ if st.session_state.page == 1:
 
 # --- PAGE 2: QUIZ ---
 elif st.session_state.page == 2:
-    st.markdown("<h1>Pop Quiz! 📝</h1>", unsafe_allow_html=True)
-    st.markdown("<p>Let's see how well you know us...</p>", unsafe_allow_html=True)
+    st.markdown("<h1>I LOVE YOU 📝</h1>", unsafe_allow_html=True)
     
     with st.form("quiz_form"):
         q1 = st.text_input("1. Where did we first meet?")
-        q2 = st.text_input("2. What is my favorite thing to eat?")
+        q2 = st.text_input("2. What is your favorite thing to me?")
         q3 = st.text_area("3. Why do you love me? (Be cute!)")
         
         st.markdown("<br>", unsafe_allow_html=True)
@@ -207,7 +206,7 @@ elif st.session_state.page == 3:
     with c1:
         st.markdown("""
         <div class="photo-frame">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Teju" width="100%" style="border-radius: 5px;">
+            <img src="C:\Users\511WS\Downloads\2026-02-06 16-21-44.pdf" width="100%" style="border-radius: 5px;">
             <div class="caption">Cutie</div>
         </div>
         """, unsafe_allow_html=True)
@@ -215,7 +214,7 @@ elif st.session_state.page == 3:
     with c2:
         st.markdown("""
         <div class="photo-frame">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Love" width="100%" style="border-radius: 5px;">
+            <img src="C:\Users\511WS\Downloads\2026-02-06 16-20-51.pdf" width="100%" style="border-radius: 5px;">
             <div class="caption">Love</div>
         </div>
         """, unsafe_allow_html=True)
@@ -223,7 +222,7 @@ elif st.session_state.page == 3:
     with c3:
         st.markdown("""
         <div class="photo-frame">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Happy" width="100%" style="border-radius: 5px;">
+            <img src="C:\Users\511WS\Downloads\2026-02-06 16-19-30.pdf" width="100%" style="border-radius: 5px;">
             <div class="caption">Forever</div>
         </div>
         """, unsafe_allow_html=True)
