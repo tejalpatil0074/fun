@@ -33,6 +33,16 @@ st.markdown(
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
+    
+    .modal-close-btn {
+        position: fixed;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1001; /* ABOVE modal */
+    }
+
+
     .modal-box button {
         margin-top: 20px;
         padding: 10px 30px;
@@ -171,6 +181,7 @@ elif st.session_state.page == 2:
     st.markdown("</div>", unsafe_allow_html=True)
 
 if st.session_state.show_valentine_modal:
+    # Modal HTML
     st.markdown(
         f"""
         <div class="modal-overlay">
@@ -183,8 +194,11 @@ if st.session_state.show_valentine_modal:
         unsafe_allow_html=True
     )
 
-    # REAL Streamlit button (this works)
-    if st.button("Close 💖"):
-        st.session_state.show_valentine_modal = False
-        st.rerun()
-
+    # Close button ABOVE overlay
+    close_container = st.container()
+    with close_container:
+        st.markdown('<div class="modal-close-btn">', unsafe_allow_html=True)
+        if st.button("Close 💖"):
+            st.session_state.show_valentine_modal = False
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
