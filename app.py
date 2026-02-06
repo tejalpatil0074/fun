@@ -7,9 +7,9 @@ st.markdown(
 
     .blur {
         filter: blur(6px);
-        pointer-events: none;
         user-select: none;
     }
+
 
     .modal-overlay {
         position: fixed;
@@ -35,6 +35,7 @@ st.markdown(
 
     
     .modal-close-btn {
+        pointer-events: auto !important;
         position: fixed;
         top: 60%;
         left: 50%;
